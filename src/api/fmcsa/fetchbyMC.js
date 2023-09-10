@@ -2,14 +2,12 @@ var express = require('express');
 var router = express.Router();
 const axios = require('axios');
 
-const config = require('../../environment/config.js');
-
 router.get('/:mcNumber', async function(req, res, next) { // Add 'async' here
 
     const mcNumber = req.params.mcNumber;
 
     try {
-        const apiUrl = 'https://mobile.fmcsa.dot.gov/qc/services/carriers/docket-number/' + mcNumber + '/?webKey=' + config.fmcsaapikey;
+        const apiUrl = 'https://mobile.fmcsa.dot.gov/qc/services/carriers/docket-number/' + mcNumber + '/?webKey=' + process.env.fmcsaapikey;
         
         // Add 'await' here to wait for the promise to resolve
         const response = await axios.get(apiUrl);
