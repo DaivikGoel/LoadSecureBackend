@@ -5,3 +5,5 @@ npm-debug.log
 .env
 .DS_Store
 src/environment/config.js
+/SSL
+LoadSecure.pem
