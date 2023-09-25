@@ -7,7 +7,6 @@ const createPool = async config => {
   // Note: Saving credentials in environment variables is convenient, but not
   // secure - consider a more secure solution such as
   // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help
-  console.log("PROCESS ENV", process.env);
   // keep secrets safe.
   return mysql.createPool({
     user: process.env.DB_USER, // e.g. 'my-db-user'
