@@ -3,6 +3,7 @@ const router = express.Router();
 
 //fmcsa
  const fetchcarrierinfo = require('./fmcsa/fetchbyMC');
+ const updateshipment = require('./loadcreation/updateshipment')
 
 
 router.get('/', (req, res) => {
@@ -14,6 +15,7 @@ router.get('/', (req, res) => {
 
 //authentication
 router.use('/fetchcarrierinfo', fetchcarrierinfo);
+router.use('/updateshipment', updateshipment);
 
 
 

@@ -1,22 +1,12 @@
-const https = require('https');
-const fs = require('fs');
+const http = require('http'); // Use the 'http' module instead of 'https'
 const app = require('./app');
-
-// Load your SSL/TLS certificate and private key files
-const privateKey = fs.readFileSync('./SSL/private.key', 'utf8');
-const certificate = fs.readFileSync('./SSL/certificate.crt', 'utf8');
-
-const credentials = {
-  key: privateKey,
-  cert: certificate,
-};
 
 const port = process.env.PORT || 4000;
 
-const httpsServer = https.createServer(credentials, app);
+const httpServer = http.createServer(app); // Create an HTTP server
 
-httpsServer.listen(port, () => {
+httpServer.listen(port, () => {
   /* eslint-disable no-console */
-  console.log(`Listening: https://localhost:${port}`);
+  console.log(`Listening: http://localhost:${port}`);
   /* eslint-enable no-console */
 });

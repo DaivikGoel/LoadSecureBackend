@@ -21,9 +21,8 @@ app.use(express.json());
 
 
 app.get('/', (req, res) => {
-  res.json({
-    message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
-  });
+  res.redirect(301, 'https://loadsecure.framer.ai/')
+  res.end();
 });
 
 
